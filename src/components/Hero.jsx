@@ -3,7 +3,20 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { ComputersCanvas } from './canvas';
 
+import React, { useContext } from 'react';
+import  LanguageContext  from './../LanguageContext';
+import { ENGLISH_TRANSLATIONS } from './../translation/en';
+import { SPANISH_TRANSLATIONS } from './../translation/es';
+import { CHINESE_TRANSLATIONS } from './../translation/ch';
+
 const Hero = () => {
+  const { currentLanguage } = useContext(LanguageContext);
+  const translations = {
+    en: ENGLISH_TRANSLATIONS,
+    es: SPANISH_TRANSLATIONS,
+    ch: CHINESE_TRANSLATIONS
+  };
+
   return (
     <section className='relative w-full
     h-screen mx-auto'>
@@ -17,12 +30,12 @@ const Hero = () => {
         </div>
         <div>
             <h1 className={`${styles.heroHeadText}
-            text-white`}>Hi, I'm <span className='text-[#3b82f6]'>
+            text-white`}>{translations[currentLanguage].hello} <span className='text-[#3b82f6]'>
               Tammy</span></h1>
               <p className={`${styles.heroSubText} mt-2
               text-white-100`}>
-               I'm a self-taught web developer. <br className='sm:block hidden'/>
-               I enjoy learning new technologies through different tutorials and projects.
+               {translations[currentLanguage].headerText1} <br className='sm:block hidden'/>
+               {translations[currentLanguage].headerText2}
               </p>
           </div>
       </div>

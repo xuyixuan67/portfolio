@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 
@@ -6,6 +6,11 @@ import { styles } from '../styles';
 import { services } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc';
+
+import  LanguageContext  from './../LanguageContext';
+import { ENGLISH_TRANSLATIONS } from './../translation/en';
+import { SPANISH_TRANSLATIONS } from './../translation/es';
+import { CHINESE_TRANSLATIONS } from './../translation/ch';
 
 
 const ServiceCard = ({index, title, icon}) =>{
@@ -38,38 +43,29 @@ const ServiceCard = ({index, title, icon}) =>{
   )
 }
 const About = () => {
+  const { currentLanguage } = useContext(LanguageContext);
+  const translations = {
+    en: ENGLISH_TRANSLATIONS,
+    es: SPANISH_TRANSLATIONS,
+    ch: CHINESE_TRANSLATIONS
+  };
+
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}
-        >Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <p className={styles.sectionSubText}>
+          {translations[currentLanguage].introduction}
+          </p>
+        <h2 className={styles.sectionHeadText}>
+          {translations[currentLanguage].overview}
+          </h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("left", "", 0.1, 1)}
         className='mt-4 text-secondary text-[18px]
-        max-w-3xl leading-[30px]'
-      >
-        Welcome to my portfolio! 
-        As a self-taught software developer, 
-        my journey began in the realm of language learning,
-         transitioned into Quality Assurance, 
-         and has now evolved into a passion for coding. 
-         Over the past four years, 
-         I have sharpened my skills in HTML, CSS, JavaScript, jQuery, 
-         Bootstrap, and PHP. 
-         My stint in QA has been instrumental in 
-         developing a meticulous attention to detail 
-         and a profound understanding of user experience. 
-         My unconventional path into software development
-          has not only diversified my skill set 
-          but also enriched my problem-solving approach. 
-          I am driven by my passion for coding, 
-          always ready to embrace new challenges,
-           and remain committed to continuous learning 
-           in this dynamic field of technology. 
-           Enjoy your journey through my portfolio!
+        max-w-3xl leading-[30px]'>
+          {translations[currentLanguage].about_main_text}
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>
