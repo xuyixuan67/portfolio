@@ -2,10 +2,9 @@ import React, { useState, useContext } from "react";
 
 import LanguageContext from "./../LanguageContext";
 
-function LanguageToggle( { setToggle } ) {
+function LanguageToggle( { setToggle , currentToggle } ) {
   const { currentLanguage, changeLanguage } = useContext(LanguageContext);
   
-
   return (
     <select 
     value={currentLanguage} 
@@ -13,7 +12,12 @@ function LanguageToggle( { setToggle } ) {
       changeLanguage(e.target.value);
       setToggle(false);
     }}
-    className="px-4 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-sm font-medium text-gray-700"
+  
+    className = {`${ !currentToggle ? 'bg-[#050816]' : 'bg-black-gradient'} 
+    px-3 py-1 border border-gray-400  text-[20px]
+    bg-black-gradient rounded-md shadow-sm focus:outline-none 
+    focus:ring-blue-900 focus:border-zinc-800 
+    text-sm font-medium text-[#aaa6c3]`}
     
   >
     <option value="en" className="py-1">English</option>
