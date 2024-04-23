@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import * as dotenv from "dotenv";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -30,13 +31,12 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-//0vVvgMtpBzkN4H1Y2
-//service_rg4pp3l
-//template_q25ta9q
+
+console.log(import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
     emailjs
       .send(
-        'service_rg4pp3l',
-        'template_q25ta9q',
+       import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+       import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Tammy Xu",
@@ -44,7 +44,7 @@ const Contact = () => {
           to_email: "xuyixuan67@gmail.com",
           message: form.message,
         },
-        '0vVvgMtpBzkN4H1Y2'
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {

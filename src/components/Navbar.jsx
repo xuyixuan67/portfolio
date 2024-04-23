@@ -11,6 +11,7 @@ import { logo, menu, close } from '../assets';
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
+  
 
   return (
     <nav className= {`${styles.paddingX} w-full flex

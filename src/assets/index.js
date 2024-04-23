@@ -28,20 +28,23 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
-import php_logo from "./tech/php-logo.png"
+import php_logo from "./tech/php-logo.png";
 
-import meta from "./company/meta.png";
+//company
 import elo from "./company/elo.jpg";
 import potzu from "./company/potzu.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+//project screenshot
+import phishproof from "./phishproof.png";
+import deliverance_enterprises from "./deliverance_enterprises.png";
+import coolxue from "./coolxue.png";
+
+import ekim from "./ekim.jfif";
+import mariah from "./mariah.jfif";
 
 export {
+  ekim,
+  mariah,
   logo,
   // backend,
   // creator,
@@ -72,13 +75,8 @@ export {
   typescript,
   threejs,
   php_logo,
-  meta,
   elo,
-  potzu,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
+  phishproof,
+  deliverance_enterprises,
+  coolxue,
 };
