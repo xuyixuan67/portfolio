@@ -40,6 +40,7 @@ import potzu from "./company/potzu.png";
 import phishproof from "./phishproof.png";
 import deliverance_enterprises from "./deliverance_enterprises.png";
 import coolxue from "./coolxue.png";
+import my_portfolio from "./3D_portfolio.png";
 
 import ekim from "./ekim.jfif";
 import mariah from "./mariah.jfif";
@@ -83,4 +84,5 @@ export {
   phishproof,
   deliverance_enterprises,
   coolxue,
+  my_portfolio,
 };

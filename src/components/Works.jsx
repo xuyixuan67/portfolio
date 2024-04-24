@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -20,23 +20,22 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  demo_link,
   
 }) => {
   const { currentLanguage } = useContext(LanguageContext);
-// // Function to get the correct description based on the current language
-// const getDescription = () => {
-//   switch (currentLanguage) {
-//     case 'en':
-//       return description_en;
-//     case 'es':
-//       return description_es;
-//     case 'ch':
-//       return description_ch;
-//     default:
-//       return description_en; // Fallback to English if language is not recognized
-//   }
-// };
+  const [hasGitHub, setHasGitHub] = useState(false);
+  const [hasDemo, setHasDemo] = useState(false);
 
+  // Effect to check if source_code_link is not empty and update hasGitHub
+  useEffect(() => {
+    setHasGitHub(!!source_code_link);
+  }, [source_code_link]);
+
+  useEffect(() => {
+    setHasDemo(!!demo_link);
+  }, [demo_link]);
+  
 
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -49,30 +48,21 @@ const ProjectCard = ({
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
       >
         <div className='relative w-full h-[230px]'>
-          <img
-            src={image}
-            alt='project_image'
-            className='w-full h-full object-contain rounded-2xl'
-          />
+  <img
+    src={image}
+    alt='project_image'
+    className='w-full h-full object-contain rounded-2xl'
+  />
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-            >
-              <img
-                src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              />
-            </div>
-          </div>
-        </div>
+        
+      </div>
+
 
         <div className='mt-5'>
           <h3 className='text-white font-bold text-[24px]'>{name}</h3>
           <p className='mt-2 text-secondary text-[14px]'>{description[currentLanguage]}</p>
         </div>
+        
 
         <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (
@@ -83,6 +73,33 @@ const ProjectCard = ({
               #{tag.name}
             </p>
           ))}
+        </div>
+
+        {/* Container for buttons */}
+        <div className='flex justify-start mt-4 space-x-2'>
+          {/* Demo Button */}
+          <div className={`card-img_hover ${hasDemo ? "inline-block" : "hidden"}`}>
+            <button
+              onClick={() => hasDemo && window.open(demo_link, "_blank")}
+              className='bg-slate-700 hover:bg-slate-900 text-white font-bold py-2 px-4 rounded'
+            >
+              Demo
+            </button>
+          </div>
+
+          {/* GitHub Icon */}
+          <div className={`card-img_hover ${hasGitHub ? "inline-block" : "hidden"}`}>
+            <div
+              onClick={() => hasGitHub && window.open(source_code_link, "_blank")}
+              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+            >
+              <img
+                src={github}
+                alt='source code'
+                className='w-1/2 h-1/2 object-contain'
+              />
+            </div>
+          </div>
         </div>
       </Tilt>
     </motion.div>

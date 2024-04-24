@@ -112,7 +112,7 @@ const Contact = () => {
               name='email'
               value={form.email}
               onChange={handleChange}
-              placeholder={translations[currentLanguage].yourNamePlaceholder}
+              placeholder={translations[currentLanguage].yourEmailPlaceholder}
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>

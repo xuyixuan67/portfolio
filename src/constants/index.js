@@ -29,6 +29,7 @@ import {
   phishproof,
   deliverance_enterprises,
   coolxue,
+  my_portfolio,
 } from "../assets";
 
 export const navLinks = [
@@ -188,6 +189,12 @@ const experiences = [
   },
 ];
 
+const readMoreText = {
+  en: "Read More",
+  es: "Leer más ",
+  ch: "繼續閱讀",
+};
+
 const testimonials = [
   {
     testimonial:
@@ -245,7 +252,7 @@ const projects = [
       },
     ],
     image: phishproof,
-    source_code_link: "https://github.com/",
+    source_code_link: "",
     demo_link: "",
   },
   {
@@ -278,7 +285,7 @@ const projects = [
       },
     ],
     image: coolxue,
-    source_code_link: "https://math.coolxue.tw/",
+    source_code_link: "",
     demo_link: "https://math.coolxue.tw/",
   },
   {
@@ -303,9 +310,41 @@ const projects = [
       },
     ],
     image: deliverance_enterprises,
-    source_code_link: "https://github.com/",
+    source_code_link: "",
     demo_link: "https://www.deliverance.enterprises/home/",
+  },
+  {
+    name: "3D Portfolio",
+    description: {
+      en: "💡A dynamic and interactive 3D portfolio website, built following a tutorial with added enhancements such as a multi-lingual section and demo link section. This project showcases the continuous learning journey of a self-taught web developer. Explore, engage, and get inspired! To be continued ❣️",
+      es: "💡Un sitio web de portafolio 3D dinámico e interactivo, construido siguiendo un tutorial con mejoras añadidas como una sección multilingüe y una sección de enlaces de demostración. Este proyecto muestra el viaje de aprendizaje continuo de un desarrollador web autodidacta. ¡Explora, participa e inspírate! Continuará❣️ ",
+      ch: "💡這是我參照Youtube教學影片所建立的3D作品集網站，為了更進一步了解怎麼使用React.js，我也在這個專案上加了幾個新的小部分，例如多語言選單、以及專案Demo連結。持續更新中❣️",
+    },
+    tags: [
+      {
+        name: "ReactJS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TailwindCSS",
+        color: "green-text-gradient",
+      },
+      {
+        name: "ThreeJS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: my_portfolio,
+    source_code_link: "https://github.com/xuyixuan67/portfolio",
+    demo_link: "https://xuyixuan.com/portfolio",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export {
+  services,
+  technologies,
+  experiences,
+  testimonials,
+  projects,
+  readMoreText,
+};
