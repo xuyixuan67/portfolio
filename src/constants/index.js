@@ -30,6 +30,7 @@ import {
   deliverance_enterprises,
   coolxue,
   my_portfolio,
+  tartifyZone,
 } from "../assets";
 
 export const navLinks = [
@@ -371,6 +372,31 @@ const projects = [
     image: my_portfolio,
     source_code_link: "https://github.com/xuyixuan67/portfolio",
     demo_link: "https://xuyixuan.com/portfolio",
+  },
+  {
+    name: "TartifyZone",
+    description: {
+      en: "🌟TartifyZone is a practice project that I completed by following a YouTube tutorial. The main purpose was to familiarize myself more with the MERN stack. It uses React, MongoDB, and OpenAI’s API calls. I will add more features once I think of any! To be continued!",
+      es: "🌟TartifyZone es un proyecto de práctica que completé siguiendo un tutorial de Youtube🎥. El propósito principal era familiarizarme más con el stack MERN. Utiliza React, MongoDB y llamadas a la API de OpenAI. ¡Añadiré más funciones en cuanto se me ocurran! ¡Continuará!",
+      ch: "🌟TartifyZone 是一個我透過看 Youtube 教學影片完成的練習項目📚。主要目的是讓我更熟悉 MERN 技術棧。它使用了 React, MongoDB, 以及 OpenAI 的 API 。一旦我想到更多功能，我將會加入！敬請期待！🚀",
+    },
+    tags: [
+      {
+        name: "ReactJS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "MongoDB",
+        color: "green-text-gradient",
+      },
+      {
+        name: "OpenAI API",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: tartifyZone,
+    source_code_link: "https://github.com/xuyixuan67/TartifyZone",
+    demo_link: "https://tartifyzone.xuyixuan.com/",
   },
 ];
 

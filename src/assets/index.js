@@ -41,6 +41,7 @@ import phishproof from "./phishproof.png";
 import deliverance_enterprises from "./deliverance_enterprises.png";
 import coolxue from "./coolxue.png";
 import my_portfolio from "./3D_portfolio.png";
+import tartifyZone from "./tartifyzone.png";
 
 import ekim from "./ekim.jfif";
 import mariah from "./mariah.jfif";
@@ -85,4 +86,5 @@ export {
   deliverance_enterprises,
   coolxue,
   my_portfolio,
+  tartifyZone,
 };
