@@ -13,7 +13,9 @@ import api from "./api.png";
 import qa from "./qa.png";
 import github from "./github.png";
 import menu from "./menu.svg";
+import menu2 from "./menu.png";
 import close from "./close.svg";
+import close2 from "./close.png";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -60,7 +62,9 @@ export {
   web2,
   github,
   menu,
+  menu2,
   close,
+  close2,
   css,
   docker,
   figma,

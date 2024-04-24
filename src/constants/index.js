@@ -126,12 +126,17 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Soft Developer",
-    company_name: "Elo Software",
+    title_en: "Soft Developer",
+    title_es: "Soft Developer",
+    title_ch: "Soft Developer",
+    company_name_en: "Elo Software",
+    company_name_ch: "Elo Software",
     icon: elo,
     iconBg: "#383E56",
-    date: "October 2018 - Febuary 2023",
-    points: [
+    date_en: "October 2018 - Febuary 2023",
+    date_es: "October 2018 - Febuary 2023",
+    date_ch: "October 2018 - Febuary 2023",
+    points_en: [
       "Main cybersecurity educational projects like PhishProof, iEngine Course Player, and Solutions Portal were outsourced by ZiffDavis, J2 Global, Inspired eLearning.",
       "4 years of experience in web development and testing, with proficiency in PHP, JavaScript, HTML, CSS, Bootstrap, jQuery, and SQL.",
       "Developed, implemented, and tested new features, with a focus on improving performance and functionality.",
@@ -143,6 +148,32 @@ const experiences = [
       "Successfully resolved issues by implementing effective problem-solving techniques, ensuring seamless completion of tasks.",
       "Utilized Git version control system to track code changes and bug fixes, improving code efficiency and collaboration with team members.",
       "Achieved high-quality standards and enhanced user satisfaction by conducting thorough manual testing and developing well-designed, testable code.",
+    ],
+    points_es: [
+      "Proyectos educativos principales de ciberseguridad como PhishProof, iEngine Course Player y Solutions Portal fueron subcontratados por ZiffDavis, J2 Global, Inspired eLearning.",
+      "4 años de experiencia en desarrollo y pruebas web, con competencia en PHP, JavaScript, HTML, CSS, Bootstrap, jQuery y SQL.",
+      "Desarrolló, implementó y probó nuevas características, con un enfoque en mejorar el rendimiento y la funcionalidad.",
+      "Diseñó interfaces de usuario con un enfoque en usabilidad, accesibilidad y capacidad de respuesta.",
+      "Gestionó y manipuló datos en tablas SQL como parte de las tareas de desarrollo.",
+      "Desarrolló una característica utilizando llamadas API para generar una interfaz de gestión de usuarios.",
+      "Comprensión básica de React.js, Node.js y Vite a través del autoaprendizaje y tutoriales en línea.",
+      "Colaboró con equipos multifuncionales y propietarios de productos para identificar requisitos, priorizar tareas y resolver problemas utilizando metodologías ágiles como JIRA.",
+      "Resolvió problemas con éxito implementando técnicas efectivas de resolución de problemas, asegurando la finalización sin problemas de las tareas.",
+      "Utilizó el sistema de control de versiones Git para rastrear cambios en el código y correcciones de errores, mejorando la eficiencia del código y la colaboración con los miembros del equipo.",
+      "Logró altos estándares de calidad y mejoró la satisfacción del usuario realizando pruebas manuales exhaustivas y desarrollando código bien diseñado y comprobable.",
+    ],
+    points_ch: [
+      "主要的網絡安全教育項目，如 PhishProof、iEngine 課程播放器和解決方案門戶，均由 ZiffDavis、J2 Global、Inspired eLearning 外包。",
+      "擁有 4 年的網頁開發和測試經驗，精通 PHP、JavaScript、HTML、CSS、Bootstrap、jQuery 和 SQL。",
+      "開發、實施和測試新功能，專注於提高性能和功能性。",
+      "設計以可用性、可訪問性和響應性為重點的用戶界面。",
+      "管理和操作開發任務中的 SQL 表中的數據。",
+      "開發了一個使用 API 調用來生成用戶管理界面的功能。",
+      "通過自學和在線教程對 React.js、Node.js 和 Vite 有基本了解。",
+      "與跨職能團隊和產品所有者合作，使用像 JIRA 這樣的敏捷方法識別需求、優先排序任務並解決問題。",
+      "通過實施有效的問題解決技術成功解決問題，確保任務的順利完成。",
+      "使用 Git 版本控制系統跟踪代碼變更和錯誤修復，提高代碼效率和團隊成員之間的協作。",
+      "通過進行徹底的手動測試和開發設計良好、可測試的代碼，實現了高質量標準並提高了用戶滿意度。",
     ],
   },
 ];
@@ -171,8 +202,12 @@ const testimonials = [
 const projects = [
   {
     name: "PhishProof",
-    description:
+    description_en:
       "🛡️Anti-Phishing Simulator: PhishProof™ PhishProof™ is an innovative anti-phishing software designed to protect organizations from data breaches caused by phishing attacks. It offers a unified experience to test, train, and measure phishing preparedness across email, phone, text, and USB baiting methods. With PhishProof, companies can significantly decrease their phishing susceptibility rate by running realistic simulations and providing targeted training.",
+    description_es:
+      "🛡️Simulador Anti-Phishing: PhishProof™ PhishProof™ es un software anti-phishing innovador diseñado para proteger a las organizaciones de las violaciones de datos causadas por ataques de phishing. Ofrece una experiencia unificada para probar, capacitar y medir la preparación contra el phishing a través de métodos de correo electrónico, teléfono, texto y señuelos USB. Con PhishProof, las empresas pueden disminuir significativamente su tasa de susceptibilidad al phishing mediante la ejecución de simulaciones realistas y proporcionando capacitación específica.",
+    description_ch:
+      "🛡️反網絡釣魚模擬器：PhishProof™ PhishProof™ 是一款創新的反網絡釣魚軟體，旨在保護組織免受網絡釣魚攻擊所導致的數據泄露。它提供了一個統一的體驗，用於測試、培訓和衡量電子郵件、電話、簡訊和USB誘餌方法的網絡釣魚準備情況。透過PhishProof，公司可以透過運行真實模擬和提供針對性培訓，顯著降低其員工受網絡釣魚攻擊的機率。",
     tags: [
       {
         name: "jQuery",
@@ -201,8 +236,12 @@ const projects = [
   },
   {
     name: "Coolxue",
-    description:
+    description_en:
       "📚Coolxue's objective is to empower parents with a comprehensive suite of math teaching resources, enabling them to kickstart their children's education in mathematics from the comfort of their home.🏠",
+    description_es:
+      "📚El objetivo de Coolxue es empoderar a los padres con un conjunto completo de recursos para la enseñanza de matemáticas, permitiéndoles iniciar la educación matemática de sus hijos desde la comodidad de su hogar.🏠",
+    description_ch:
+      "📚Coolxue的目標是為家長提供全面的數學教學資源，使他們能夠從家中舒適的環境中開始孩子的數學教育。🏠",
     tags: [
       {
         name: "jQuery",
@@ -231,8 +270,12 @@ const projects = [
   },
   {
     name: "Deliverance Enterprises Home Page",
-    description:
+    description_en:
       "🎯Project Overview: Create Deliverance Enterprises homepage based on the provided design, serving as a gateway to their two flagship initiatives: Deliverance Robotics and Deliverance Energy.",
+    description_es:
+      "🎯Descripción del Proyecto: Crear la página de inicio de Deliverance Enterprises basada en el diseño proporcionado, sirviendo como puerta de entrada a sus dos iniciativas principales: Deliverance Robotics y Deliverance Energy.",
+    description_ch:
+      "🎯項目概覽：根據Deliverance Enterprises提供的設計創建其首頁，作為連往其兩大商標：Deliverance Robotics和Deliverance Energy的主要頁面。",
     tags: [
       {
         name: "HTML",

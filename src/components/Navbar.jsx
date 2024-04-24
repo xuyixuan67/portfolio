@@ -5,7 +5,7 @@ import LanguageToggle  from './LanguageToggle';
 
 import { styles } from '../styles';
 import { navLinks } from '../constants';
-import { logo, menu, close } from '../assets';
+import { logo, menu, close, menu2, close2 } from '../assets';
 
 
 const Navbar = () => {
@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className='sm:hidden flex flex-1
         justify-end items-center'>
           <img
-            src={toggle ? close : menu}
+            src={toggle ? close2 : menu2}
             alt='menu'
             className='w-[28px] h-[28px]
             object-contain cursor-pointer'

@@ -30,6 +30,9 @@ const FeedbackCard = ({
 
   const toggleModal = () =>{
     setShowModal(!showModal);
+    
+    // Toggle the overflow style on the body based on the showModal state
+    document.body.style.overflow = !showModal ? 'hidden' : 'auto';
   }
 
   return (

@@ -7,6 +7,10 @@ export const ENGLISH_TRANSLATIONS = {
   overview: "Overview",
   about_main_text:
     "Welcome to my portfolio! As a self-taught software developer, my journey began in the realm of language learning, transitioned into Quality Assurance, and has now evolved into a passion for coding. Over the past four years, I have sharpened my skills in HTML, CSS, JavaScript, jQuery, Bootstrap, and PHP. My stint in QA has been instrumental in developing a meticulous attention to detail and a profound understanding of user experience. My unconventional path into software development has not only diversified my skill set but also enriched my problem-solving approach. I am driven by my passion for coding, always ready to embrace new challenges, and remain committed to continuous learning in this dynamic field of technology. Enjoy your journey through my portfolio!",
+  my_work: "My Work",
+  projects: "PROJECTS.",
+  my_work_description:
+    "Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.",
 };
 
 // remember to add the wroking experience description here---
