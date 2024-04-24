@@ -15,6 +15,18 @@ export const ENGLISH_TRANSLATIONS = {
     "Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.",
   experienceTextUp: "What I have done so far",
   experienceTextDown: "Work Experience.",
+  feedbackTextUp: "What others say",
+  feedbackTextDown: "Testimonials.",
+  contactTextUp: "Get in touch",
+  contactTextDown: "Contact",
+  yourName: "Your Name",
+  yourNamePlaceholder: "What's your name?",
+  yourEmail: "Your Email",
+  yourEmailPlaceholder: "What's your Email address?",
+  yourMsg: "Your Message",
+  yourMsgPlaceholder: "What you want to say?",
+  sending: "Sending...",
+  send: "Send",
 };
 
 // remember to add the wroking experience description here---

@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { testimonials } from "../constants";
+
+import  LanguageContext  from './../LanguageContext';
+import { ENGLISH_TRANSLATIONS } from './../translation/en';
+import { SPANISH_TRANSLATIONS } from './../translation/es';
+import { CHINESE_TRANSLATIONS } from './../translation/ch';
 
 const FeedbackCard = ({
   index,
@@ -13,7 +18,8 @@ const FeedbackCard = ({
   designation,
   company,
   image,
-  linkedIn
+  linkedIn,
+  readMoreText
 }) => {
 
   const [isExpanded, setIsExpanded] = useState(false);
@@ -35,6 +41,9 @@ const FeedbackCard = ({
     document.body.style.overflow = !showModal ? 'hidden' : 'auto';
   }
 
+  const { currentLanguage } = useContext(LanguageContext);
+
+
   return (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
@@ -50,7 +59,8 @@ const FeedbackCard = ({
 
         {testimonial.split(' ').length > 40 
         && (<button onClick={toggleModal} className="text-yellow-200">
-          Read More</button>)}
+          {readMoreText[currentLanguage]}
+          </button>)}
       
       <div className='mt-7 flex justify-between items-center gap-1'>
         <div className='flex-1 flex flex-col'>
@@ -111,14 +121,23 @@ const FeedbackCard = ({
 };
 
 const Feedbacks = () => {
+  const { currentLanguage } = useContext(LanguageContext);
+  const translations = {
+    en: ENGLISH_TRANSLATIONS,
+    es: SPANISH_TRANSLATIONS,
+    ch: CHINESE_TRANSLATIONS
+  };
+
   return (
     <div className={`mt-12 bg-black-100 rounded-[20px]`}>
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>What others say</p>
-          <h2 className={styles.sectionHeadText}>Testimonials.</h2>
+          <p className={styles.sectionSubText}>
+          {translations[currentLanguage].feedbackTextUp}</p>
+          <h2 className={styles.sectionHeadText}>
+          {translations[currentLanguage].feedbackTextDown}</h2>
         </motion.div>
       </div>
       <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>

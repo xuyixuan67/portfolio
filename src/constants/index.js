@@ -196,6 +196,11 @@ const testimonials = [
     designation: "Co-Founder",
     company: "Elo Software",
     image: ekim,
+    readMoreText: {
+      en: "Read More",
+      es: "Leer más ",
+      ch: "繼續閱讀",
+    },
     linkedIn: "https://www.linkedin.com/in/ekim-emre-yardimli/",
   },
   {
