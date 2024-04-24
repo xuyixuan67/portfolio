@@ -1,3 +1,5 @@
+import Experience from "../components/Experience";
+
 export const ENGLISH_TRANSLATIONS = {
   hello: "Hi, I'm",
   headerText1: "I'm a self-taught web developer.",
@@ -11,6 +13,8 @@ export const ENGLISH_TRANSLATIONS = {
   projects: "PROJECTS.",
   my_work_description:
     "Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.",
+  experienceTextUp: "What I have done so far",
+  experienceTextDown: "Work Experience.",
 };
 
 // remember to add the wroking experience description here---

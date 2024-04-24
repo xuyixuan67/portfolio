@@ -11,4 +11,6 @@ export const SPANISH_TRANSLATIONS = {
   projects: "PROYECTOS.",
   my_work_description:
     "Los siguientes proyectos muestran mis habilidades y experiencia a través de ejemplos reales de mi trabajo. Cada proyecto se describe brevemente con enlaces a repositorios de código y demos en vivo. Refleja mi capacidad para resolver problemas complejos, trabajar con diferentes tecnologías y gestionar proyectos de manera efectiva.",
+  experienceTextUp: "Lo que he hecho hasta ahora",
+  experienceTextDown: "Experiencia laboral.",
 };

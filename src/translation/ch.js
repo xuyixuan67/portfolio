@@ -11,4 +11,6 @@ export const CHINESE_TRANSLATIONS = {
   projects: "專案項目",
   my_work_description:
     "下列專案分別為我在愛邏軟體科技服務時所參與開發的項目、協助朋友或家人所開發的網頁、以及我在其他時候學習其他程式語言的練習專案項目。除了工作期間參與的項目無法提供Github程式碼的分享以外，所有我用來學習及練習的專案都有其Github的分享連結。",
+  experienceTextUp: "到目前為止我做了什麼",
+  experienceTextDown: "工作經歷",
 };

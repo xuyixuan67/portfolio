@@ -16,28 +16,26 @@ import { CHINESE_TRANSLATIONS } from './../translation/ch';
 const ProjectCard = ({
   index,
   name,
-  description_en,
-  description_es,
-  description_ch,
+  description,
   tags,
   image,
   source_code_link,
   
 }) => {
   const { currentLanguage } = useContext(LanguageContext);
-// Function to get the correct description based on the current language
-const getDescription = () => {
-  switch (currentLanguage) {
-    case 'en':
-      return description_en;
-    case 'es':
-      return description_es;
-    case 'ch':
-      return description_ch;
-    default:
-      return description_en; // Fallback to English if language is not recognized
-  }
-};
+// // Function to get the correct description based on the current language
+// const getDescription = () => {
+//   switch (currentLanguage) {
+//     case 'en':
+//       return description_en;
+//     case 'es':
+//       return description_es;
+//     case 'ch':
+//       return description_ch;
+//     default:
+//       return description_en; // Fallback to English if language is not recognized
+//   }
+// };
 
 
   return (
@@ -73,7 +71,7 @@ const getDescription = () => {
 
         <div className='mt-5'>
           <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{getDescription()}</p>
+          <p className='mt-2 text-secondary text-[14px]'>{description[currentLanguage]}</p>
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>
