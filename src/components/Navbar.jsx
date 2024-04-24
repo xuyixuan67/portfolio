@@ -1,16 +1,19 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
 
 import LanguageToggle  from './LanguageToggle';
 
 import { styles } from '../styles';
-import { navLinks } from '../constants';
+import { navLinks, portfolio } from '../constants';
 import { logo, menu, close, menu2, close2 } from '../assets';
+
+import  LanguageContext  from './../LanguageContext';
 
 
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
+  const { currentLanguage } = useContext(LanguageContext);
   
 
   return (
@@ -32,8 +35,8 @@ const Navbar = () => {
             <img src={logo} alt="logo" className='w-9
             h-9 object-contain'/>
             <p className='text-white text-[18px]
-            font-bold cursor-pointer flex'>Tammy Skylar &nbsp;
-            <span className='sm:block hidden'>| Portfolio</span></p>
+            font-bold cursor-pointer flex'>Tammy Xu &nbsp;
+            <span className='sm:block hidden'>| {portfolio[currentLanguage]}</span></p>
         </Link>
         <ul className='list-none hidden sm:flex 
         flex-row gap-10 flex items-center'>
@@ -41,14 +44,14 @@ const Navbar = () => {
             <li
               key={link.id}
               className={`${
-                active === link.title
+                active === link.title[currentLanguage]
                   ? "text-white"
                   : "text-secondary"
               } hover:text-white text-[18px]
               font-medium cursor-pointer`}
-                onClick={() => setActive(link.title)}
+                onClick={() => setActive(link.title[currentLanguage])}
               >
-              <a href={`#${link.id}`}>{link.title}</a>
+              <a href={`#${link.id}`}>{link.title[currentLanguage]}</a>
             </li>
           ))}
           <LanguageToggle />
@@ -75,18 +78,18 @@ const Navbar = () => {
                   <li
                     key={link.id}
                     className={`${
-                      active === link.title
+                      active === link.title[currentLanguage]
                         ? "text-white"
                         : "text-secondary"
                     } font-poppins font-medium
                     cursor-pointer text-[16px]`}
                       onClick={() => {
                         setToggle(!toggle);
-                        setActive(link.title);
+                        setActive(link.title[currentLanguage]);
                       }}
                   
               >
-              <a href={`#${link.id}`}>{link.title}</a>
+              <a href={`#${link.id}`}>{link.title[currentLanguage]}</a>
             </li>
           ))}
           <LanguageToggle  setToggle={setToggle} currentToggle={toggle} />

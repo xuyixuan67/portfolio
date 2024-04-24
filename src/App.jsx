@@ -19,10 +19,8 @@ import  LanguageContext  from './LanguageContext';
             bg-no-repeat bg-center'>
             
               <Navbar />
-              
               <Hero />
-
-              
+             
             </div>
             <div>
               <About />

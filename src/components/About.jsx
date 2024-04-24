@@ -14,6 +14,8 @@ import { CHINESE_TRANSLATIONS } from './../translation/ch';
 
 
 const ServiceCard = ({index, title, icon}) =>{
+  const { currentLanguage } = useContext(LanguageContext);
+
   return( 
     <Tilt className='xs:w-[250px] w-full'>
       <motion.div
@@ -31,10 +33,10 @@ const ServiceCard = ({index, title, icon}) =>{
         py-5 px-12 min-h-[280px] flex
         justify-evenly items-center flex-col'
       >
-        <img src={icon} alt={title} 
+        <img src={icon} alt={title[currentLanguage]} 
         className='w-16 h-16 object-contain'/>
         <h3 className='text-white text-[20px]
-        font-bold text-center'>{title}</h3>
+        font-bold text-center'>{title[currentLanguage]}</h3>
 
       </div>
 

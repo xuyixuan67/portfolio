@@ -35,33 +35,67 @@ import {
 export const navLinks = [
   {
     id: "about",
-    title: "About",
+    title: {
+      en: "About",
+      es: "Sobre",
+      ch: "關於",
+    },
   },
   {
     id: "work",
-    title: "Work",
+    title: {
+      en: "Work",
+      es: "Trabajo",
+      ch: "工作經歷",
+    },
   },
   {
     id: "contact",
-    title: "Contact",
+    title: {
+      en: "Contact",
+      es: "Contacto",
+      ch: "聯絡方式",
+    },
   },
 ];
 
+const portfolio = {
+  en: "portfolio",
+  es: "portafolio",
+  ch: "作品集",
+};
+
 const services = [
   {
-    title: "Web Developer",
+    title: {
+      en: "Web Development",
+      es: "Desarrollo web",
+      ch: "網頁開發",
+    },
     icon: web2,
   },
   {
-    title: "PHP Native Developer",
+    title: {
+      en: "PHP Native",
+      es: "PHP Nativo",
+      ch: "PHP ",
+    },
     icon: php,
   },
   {
-    title: "Frontend Developer",
+    title: {
+      en: "Frontend Developer",
+      es: "Desarrollo Frontend",
+      ch: "前端開發",
+    },
     icon: frontend,
   },
   {
-    title: "Quality Assurance",
+    title: {
+      en: "Quality Assurance",
+      es: "Aseguramiento de la Calidad",
+      ch: "軟體測試",
+    },
     icon: qa,
   },
 ];
@@ -347,4 +381,5 @@ export {
   testimonials,
   projects,
   readMoreText,
+  portfolio,
 };
