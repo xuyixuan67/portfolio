@@ -1,11 +1,17 @@
-import { useState, useRef, Suspense } from "react";
+import { useRef, Suspense, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 
 const Stars = (props) => {
   const ref = useRef();
-  const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.2 }));
+  
+  // Generate the sphere positions using useMemo for performance optimization
+  const sphere = useMemo(() => {
+    const tempPositions = new Float32Array(5000 * 3); // Multiply by 3 for x, y, z
+    random.inSphere(tempPositions, { radius: 1.2 });
+    return tempPositions;
+  }, []); // Empty dependency array means it runs once on mount
 
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;
