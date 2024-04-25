@@ -38,16 +38,16 @@ const ProjectCard = ({
   
 
   return (
-    <motion.div  initial="hidden" animate="show" variants={fadeIn("up", "spring", index * 0.5, 0.75)} 
+    <Tilt 
+      options={{
+        max: 45,
+        scale: 1,
+        speed: 450,
+      }}
+      className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
     >
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
-      >
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} 
+    >
         <div className='relative w-full h-[230px]'>
   <img
     src={image}
@@ -102,8 +102,8 @@ const ProjectCard = ({
             </div>
           </div>
         </div>
-      </Tilt>
     </motion.div>
+      </Tilt>
   );
 };
 
@@ -117,13 +117,13 @@ const Works = () => {
   
   return (
     <>
-      <motion.div  initial="hidden" animate="show" variants={textVariant()}>
+      <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} `}>{translations[currentLanguage].my_work}</p>
         <h2 className={`${styles.sectionHeadText}`}>{translations[currentLanguage].projects}</h2>
       </motion.div>
 
       <div className='w-full flex'>
-        <motion.p  initial="hidden" animate="show"
+        <motion.p
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
