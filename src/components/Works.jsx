@@ -117,13 +117,13 @@ const Works = () => {
   
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div  initial="hidden" animate="show" variants={textVariant()}>
         <p className={`${styles.sectionSubText} `}>{translations[currentLanguage].my_work}</p>
         <h2 className={`${styles.sectionHeadText}`}>{translations[currentLanguage].projects}</h2>
       </motion.div>
 
       <div className='w-full flex'>
-        <motion.p
+        <motion.p  initial="hidden" animate="show"
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
