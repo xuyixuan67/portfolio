@@ -19,6 +19,8 @@ const ServiceCard = ({index, title, icon}) =>{
   return( 
     <Tilt className='xs:w-[250px] w-full'>
       <motion.div
+       initial="hidden" 
+       animate="show"
         variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
         className='w-full pink-yellow-gradient p-[1px]
         rounded-[20px] shadow-card'
@@ -54,7 +56,10 @@ const About = () => {
 
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div 
+       initial="hidden" 
+       animate="show"
+      variants={textVariant()}>
         <p className={styles.sectionSubText}>
           {translations[currentLanguage].introduction}
           </p>
@@ -64,18 +69,22 @@ const About = () => {
       </motion.div>
 
       <motion.p
+       initial="hidden" 
+       animate="show"
         variants={fadeIn("left", "", 0.1, 1)}
         className='mt-4 text-secondary text-[18px]
         max-w-3xl leading-[30px]'>
           {translations[currentLanguage].about_main_text}
       </motion.p>
 
+    
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>
         {services.map(( service, index) =>(
           <ServiceCard key={service.title[currentLanguage]}
           index={index} {...service} />
         ))}
       </div>
+      
     </>
   )
 }

@@ -46,63 +46,66 @@ const ProjectCard = ({
       }}
       className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
     >
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} 
-    >
+    <motion.div 
+       initial="hidden" 
+       animate="show"
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)} 
+      >
         <div className='relative w-full h-[230px]'>
-  <img
-    src={image}
-    alt='project_image'
-    className='w-full h-full object-contain rounded-2xl'
-  />
+          <img
+            src={image}
+            alt='project_image'
+            className='w-full h-full object-contain rounded-2xl'
+          />
 
         
-      </div>
-
-
-        <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description[currentLanguage]}</p>
-        </div>
-        
-
-        <div className='mt-4 flex flex-wrap gap-2'>
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
-            </p>
-          ))}
         </div>
 
-        {/* Container for buttons */}
-        <div className='flex justify-start mt-4 space-x-2'>
-          {/* Demo Button */}
-          <div className={`card-img_hover ${hasDemo ? "inline-block" : "hidden"}`}>
-            <button
-              onClick={() => hasDemo && window.open(demo_link, "_blank")}
-              className='bg-slate-700 hover:bg-slate-900 text-white font-bold py-2 px-4 rounded'
-            >
-              Demo
-            </button>
+
+          <div className='mt-5'>
+            <h3 className='text-white font-bold text-[24px]'>{name}</h3>
+            <p className='mt-2 text-secondary text-[14px]'>{description[currentLanguage]}</p>
+          </div>
+          
+
+          <div className='mt-4 flex flex-wrap gap-2'>
+            {tags.map((tag) => (
+              <p
+                key={`${name}-${tag.name}`}
+                className={`text-[14px] ${tag.color}`}
+              >
+                #{tag.name}
+              </p>
+            ))}
           </div>
 
-          {/* GitHub Icon */}
-          <div className={`card-img_hover ${hasGitHub ? "inline-block" : "hidden"}`}>
-            <div
-              onClick={() => hasGitHub && window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-            >
-              <img
-                src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              />
+          {/* Container for buttons */}
+          <div className='flex justify-start mt-4 space-x-2'>
+            {/* Demo Button */}
+            <div className={`card-img_hover ${hasDemo ? "inline-block" : "hidden"}`}>
+              <button
+                onClick={() => hasDemo && window.open(demo_link, "_blank")}
+                className='bg-slate-700 hover:bg-slate-900 text-white font-bold py-2 px-4 rounded'
+              >
+                Demo
+              </button>
+            </div>
+
+            {/* GitHub Icon */}
+            <div className={`card-img_hover ${hasGitHub ? "inline-block" : "hidden"}`}>
+              <div
+                onClick={() => hasGitHub && window.open(source_code_link, "_blank")}
+                className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              >
+                <img
+                  src={github}
+                  alt='source code'
+                  className='w-1/2 h-1/2 object-contain'
+                />
+              </div>
             </div>
           </div>
-        </div>
-    </motion.div>
+       </motion.div>
       </Tilt>
   );
 };
@@ -117,13 +120,17 @@ const Works = () => {
   
   return (
     <>
-      <motion.div variants={textVariant()}>
+    
+      <motion.div  
+      initial="hidden" animate="show" 
+      variants={textVariant()}>
         <p className={`${styles.sectionSubText} `}>{translations[currentLanguage].my_work}</p>
         <h2 className={`${styles.sectionHeadText}`}>{translations[currentLanguage].projects}</h2>
       </motion.div>
 
       <div className='w-full flex'>
-        <motion.p
+        <motion.p 
+        initial="hidden" animate="show"
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
