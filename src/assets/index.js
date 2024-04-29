@@ -1,11 +1,7 @@
 import logo from "./logo.svg";
-// import backend from "./backend.png";
-// import creator from "./creator.png";
-// import mobile from "./mobile.png";
-import web from "./web.png";
 import web_develop from "./web_develop.jpg";
 import php from "./php-code.png";
-import php_backend from "./php_backend.jpg";
+import backend from "./backend.jpg";
 import web2 from "./web-development.png";
 import php2 from "./php-code2.png";
 import frontend from "./frontend.png";
@@ -17,6 +13,7 @@ import menu2 from "./menu.png";
 import close from "./close.svg";
 import close2 from "./close.png";
 
+//company
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
@@ -24,6 +21,7 @@ import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
+import mysql from "./tech/mysql.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
@@ -34,14 +32,15 @@ import php_logo from "./tech/php-logo.png";
 
 //company
 import elo from "./company/elo.jpg";
-import potzu from "./company/potzu.png";
 
 //project screenshot
-import phishproof from "./phishproof.png";
-import deliverance_enterprises from "./deliverance_enterprises.png";
-import coolxue from "./coolxue.png";
-import my_portfolio from "./3D_portfolio.png";
-import tartifyZone from "./tartifyzone.png";
+import phishproof from "./projects/phishproof.png";
+import deliverance_enterprises from "./projects/deliverance_enterprises.png";
+import deliverance_energy from "./projects/deliveranceEnergy.png";
+import deliverance_robotics from "./projects/deliveranceRobotics.png";
+import coolxue from "./projects/coolxue.png";
+import my_portfolio from "./projects/3D_portfolio.png";
+import tartifyZone from "./projects/tartifyzone.png";
 
 import ekim from "./ekim.jfif";
 import mariah from "./mariah.jfif";
@@ -50,14 +49,10 @@ export {
   ekim,
   mariah,
   logo,
-  // backend,
-  // creator,
-  // mobile,
   qa,
-  web,
   web_develop,
   php,
-  php_backend,
+  backend,
   php2,
   frontend,
   api,
@@ -74,6 +69,7 @@ export {
   html,
   javascript,
   mongodb,
+  mysql,
   nodejs,
   reactjs,
   redux,
@@ -84,6 +80,8 @@ export {
   elo,
   phishproof,
   deliverance_enterprises,
+  deliverance_energy,
+  deliverance_robotics,
   coolxue,
   my_portfolio,
   tartifyZone,

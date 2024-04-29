@@ -47,6 +47,12 @@ const ExperienceCard = ({ experience }) => {
         >
           {experience.company_name[currentLanguage]}
         </p>
+        <p
+          className='text-amber-100 text-[12px] italic'
+          style={{ margin: 0 }}
+        >
+          {experience.description[currentLanguage]}
+        </p>
       </div>
 
       <ul className='mt-5 list-disc ml-5 space-y-2'>

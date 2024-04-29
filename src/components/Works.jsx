@@ -1,4 +1,5 @@
 import React, {useContext, useState, useEffect} from "react";
+import { FcPrevious, FcNext  } from "react-icons/fc";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -26,6 +27,9 @@ const ProjectCard = ({
   const { currentLanguage } = useContext(LanguageContext);
   const [hasGitHub, setHasGitHub] = useState(false);
   const [hasDemo, setHasDemo] = useState(false);
+  const [showImgSlider, setShowImgSlider] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
 
   // Effect to check if source_code_link is not empty and update hasGitHub
   useEffect(() => {
@@ -35,6 +39,23 @@ const ProjectCard = ({
   useEffect(() => {
     setHasDemo(!!demo_link);
   }, [demo_link]);
+  
+  // Effect to check if image is an array and update showImgSlider
+useEffect(() => {
+  if (Array.isArray(image)) {
+    setShowImgSlider(true);
+  } else {
+    setShowImgSlider(false);
+  }
+}, [image]); // Only run this effect when the 'image' prop changes
+
+  const handlePrevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + image.length) % image.length);
+  };
+  
+  const handleNextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % image.length);
+  };
   
 
   return (
@@ -51,17 +72,36 @@ const ProjectCard = ({
        animate="show"
       variants={fadeIn("up", "spring", index * 0.5, 0.75)} 
       >
+
+
         <div className='relative w-full h-[230px]'>
           <img
-            src={image}
+            src={showImgSlider? image[currentIndex] : image}
             alt='project_image'
             className='w-full h-full object-contain rounded-2xl'
           />
-
+{/* ----try to add img slider btns--- */}
+        {showImgSlider && (
+          <>
+           <div class="absolute right-3 top-0 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
+             <span>{currentIndex + 1}</span>/<span>{image.length}</span>
+           </div>
+            <button
+              onClick={handlePrevSlide}
+              className='absolute left-5 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md'
+            ><FcPrevious />
+            </button>
+            <button
+              onClick={handleNextSlide}
+              className='absolute right-5 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md'
+            >
+              <FcNext />
+            </button>
+          </>
+        )}
+{/* try to add img slider btns-- */}
         
         </div>
-
-
           <div className='mt-5'>
             <h3 className='text-white font-bold text-[24px]'>{name}</h3>
             <p className='mt-2 text-secondary text-[14px]'>{description[currentLanguage]}</p>
