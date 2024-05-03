@@ -78,7 +78,6 @@ const Experience = () => {
   };
   const { theme, toggleTheme } = useContext(ThemeContext);
   const isDarkTheme = () => {
-    console.log('Experience.jsx: ' + theme);
     return theme === 'dark' ? true : false;
   }
 

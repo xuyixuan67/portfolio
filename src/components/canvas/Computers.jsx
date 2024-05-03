@@ -1,16 +1,21 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useCallback, useContext, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
+import ThemeContext from "../../ThemeContext";
 
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
+  const {theme, toggleTheme} = useContext(ThemeContext);
+  const isDarkTheme = () =>{
+    return theme === 'dark' ? true : false;
+  }
 
   return (
     <mesh>
-      <hemisphereLight intensity={5.5} 
-      groundColor='black' />
+      <hemisphereLight intensity={isDarkTheme()? 3 : 7} 
+       groundColor={isDarkTheme() ? 'black' : 'white'} />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -19,13 +24,13 @@ const Computers = ({ isMobile }) => {
         castShadow
         shadow-mapSize={1024}
       />
-      <pointLight intensity={3} 
-        position={[0.5, 0, 1]}
+      <pointLight intensity={isDarkTheme()? 4: 2} 
+        position={[0.2, 0, 1]}
       />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.4 : 0.75}
-        position={isMobile ? [0, -2.3, -0.5] : [0, -3.2, 0]}
+        scale={isMobile ? 0.4 : 0.7}
+        position={isMobile ? [0, -2.3, -0.5] : [0.5, -3, 0]}
         rotation={[-0.01, -0.3, -0.1]}
       />
     </mesh>

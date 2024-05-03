@@ -164,7 +164,7 @@ const Works = () => {
   };
   const { theme, toggleTheme} = useContext(ThemeContext);
   const isDarkTheme = () => {
-    console.log('Works.jsx: ' + theme);
+    ('Works.jsx: ' + theme);
     return theme === 'dark' ? true : false;
   }
   

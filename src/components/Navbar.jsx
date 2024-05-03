@@ -18,7 +18,6 @@ const Navbar = () => {
   const { currentLanguage } = useContext(LanguageContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
   const isDarkTheme = () =>{
-    console.log('now is ' + theme + ' THEME--');
     return theme === 'dark' ? true : false;
   }
   

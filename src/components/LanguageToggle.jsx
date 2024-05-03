@@ -7,7 +7,6 @@ function LanguageToggle( { setMenuToggle , menuToggle } ) {
   const { currentLanguage, changeLanguage } = useContext(LanguageContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
   const isDarkTheme = () =>{
-    console.log('LanguageToggle.jsx with ' + theme + ' THEME--');
     return theme === 'dark' ? true : false;
   }
   

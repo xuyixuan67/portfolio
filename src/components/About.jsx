@@ -56,7 +56,6 @@ const About = () => {
 
   const { theme, toggleTheme } = useContext(ThemeContext);
   const isDarkTheme = () =>{
-    console.log('About.jsx: ' + theme + ' THEME--');
     return theme === 'dark' ? true : false;
   }
 
