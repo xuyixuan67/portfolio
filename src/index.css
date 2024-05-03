@@ -53,11 +53,28 @@
   );
 }
 
+.yellow-white-gradient {
+  background: "#00cea8";
+  background: linear-gradient(90.13deg, #f1ceec 1.9%, #f0fca9 97.5%);
+  background: -webkit-linear-gradient(90.13deg, #f1ceec 1.9%, #f0fca9 97.5%);
+}
 
 .pink-yellow-gradient {
   background: "#00cea8";
-  background: linear-gradient(90.13deg, #ef55da 1.9%, #dff466 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #ef55da 1.9%, #dff466 97.5%);
+  background: linear-gradient(90.13deg, #f0fca9 1.9%, #f49fe9 97.5%);
+  background: -webkit-linear-gradient(90.13deg, #f0fca9 1.9%, #f49fe9 97.5%);
+}
+
+.yellow-pink-gradient {
+  background: "#00cea8";
+  background: linear-gradient(90.13deg, #f49fe9 1.9%, #f0fca9 97.5%);
+  background: -webkit-linear-gradient(90.13deg, #f49fe9 1.9%, #f0fca9 97.5%);
+}
+
+.blue-pink-gradient {
+  background: "#00cea8";
+  background: linear-gradient(90.13deg, #f49fe9 1.9%, #7bbdff 97.5%);
+  background: -webkit-linear-gradient(90.13deg, #f49fe9 1.9%, #7bbdff 97.5%);
 }
 
 .green-pink-gradient {

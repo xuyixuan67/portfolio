@@ -16,15 +16,15 @@ import LanguageContext from "../LanguageContext";
 import { ENGLISH_TRANSLATIONS } from './../translation/en';
 import { SPANISH_TRANSLATIONS } from './../translation/es';
 import { CHINESE_TRANSLATIONS } from './../translation/ch';
+import ThemeContext from "../ThemeContext";
 
-const ExperienceCard = ({ experience }) => {
-  const { currentLanguage } = useContext(LanguageContext);
-    
+const ExperienceCard = ({ experience, currentLanguage, isDarkTheme }) => {
+      
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
+        background: isDarkTheme? "#1d1836" : "#8cf9e5",
+        color: isDarkTheme? "#fff" : "#f90589",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date[currentLanguage]}
@@ -40,15 +40,15 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title[currentLanguage]}</h3>
+        <h3 className={`${isDarkTheme?"text-white":"text-cyan-700"} text-[24px] font-bold`}>{experience.title[currentLanguage]}</h3>
         <p
-          className='text-secondary text-[16px] font-semibold'
+          className={`${isDarkTheme?"text-secondary":"text-cyan-500"} text-[16px] font-semibold`}
           style={{ margin: 0 }}
         >
           {experience.company_name[currentLanguage]}
         </p>
         <p
-          className='text-amber-100 text-[12px] italic'
+          className={`${isDarkTheme?"text-amber-100":"text-amber-500"} text-[12px] italic`}
           style={{ margin: 0 }}
         >
           {experience.description[currentLanguage]}
@@ -59,7 +59,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points[currentLanguage].map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            className={`${isDarkTheme?"text-white-100":"text-cyan-900"} text-[14px] pl-1 tracking-wider`}
           >
             {point}
           </li>
@@ -76,15 +76,22 @@ const Experience = () => {
     es: SPANISH_TRANSLATIONS,
     ch: CHINESE_TRANSLATIONS
   };
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const isDarkTheme = () => {
+    console.log('Experience.jsx: ' + theme);
+    return theme === 'dark' ? true : false;
+  }
 
   return (
     <>
       <motion.div variants={textVariant()}>
-        {<p className={`${styles.sectionSubText} text-center`}>
+        {<p className={`${styles.sectionSubText} 
+        ${isDarkTheme() ? "text-white" : "text-orange-700"} text-center`}>
         {translations[currentLanguage].experienceTextUp}
           
         </p> }
-        <h2 className={`${styles.sectionHeadText} text-center`}>
+        <h2 className={`${styles.sectionHeadText} 
+        ${isDarkTheme()? "text-white":"text-pink-400"} text-center`}>
         {translations[currentLanguage].experienceTextDown}
           
         </h2>
@@ -95,7 +102,8 @@ const Experience = () => {
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
-              experience={experience}
+              experience={experience} currentLanguage={currentLanguage}
+              isDarkTheme={isDarkTheme()}
             />
           ))}
         </VerticalTimeline>

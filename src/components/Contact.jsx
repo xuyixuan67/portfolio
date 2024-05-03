@@ -13,6 +13,8 @@ import { ENGLISH_TRANSLATIONS } from './../translation/en';
 import { SPANISH_TRANSLATIONS } from './../translation/es';
 import { CHINESE_TRANSLATIONS } from './../translation/ch';
 
+import ThemeContext from "../ThemeContext";
+
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -76,7 +78,8 @@ const Contact = () => {
     es: SPANISH_TRANSLATIONS,
     ch: CHINESE_TRANSLATIONS
   };
-
+  const {theme, toggleTheme} = useContext(ThemeContext);
+  const isDarkTheme = () =>{ return theme === "dark" ? true: false;}
 
   return (
     <div
@@ -84,10 +87,10 @@ const Contact = () => {
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+        className={`${isDarkTheme() ? "bg-black-100":"bg-yellow-200"} flex-[0.75] p-8 rounded-2xl`}
       >
-        <p className={styles.sectionSubText}>{translations[currentLanguage].contactTextUp}</p>
-        <h3 className={styles.sectionHeadText}>{translations[currentLanguage].contactTextDown}</h3>
+        <p className={`${styles.sectionSubText} ${isDarkTheme()?"text:white":"text-sky-500"}`}>{translations[currentLanguage].contactTextUp}</p>
+        <h3 className={`${styles.sectionHeadText} ${isDarkTheme()?"text:white":"blue-text-gradient"}`}>{translations[currentLanguage].contactTextDown}</h3>
 
         <form
           ref={formRef}
@@ -95,42 +98,48 @@ const Contact = () => {
           className='mt-12 flex flex-col gap-8'
         >
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>{translations[currentLanguage].yourName}</span>
+            <span className={`${isDarkTheme()?"text-white":"text-sky-700"} font-medium mb-4`}>{translations[currentLanguage].yourName}</span>
             <input
               type='text'
               name='name'
               value={form.name}
               onChange={handleChange}
               placeholder={translations[currentLanguage].yourNamePlaceholder}
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className={`${isDarkTheme()?"bg-tertiary placeholder:text-secondary text-white":
+                "bg-sky-100 placeholder:text-sky-400 text-sky-600"}
+              py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>{translations[currentLanguage].yourEmail}</span>
+            <span className={`${isDarkTheme()?"text-white":"text-sky-700"} font-medium mb-4`}>{translations[currentLanguage].yourEmail}</span>
             <input
               type='email'
               name='email'
               value={form.email}
               onChange={handleChange}
               placeholder={translations[currentLanguage].yourEmailPlaceholder}
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className={`${isDarkTheme()?"bg-tertiary placeholder:text-secondary text-white":
+              "bg-sky-100 placeholder:text-sky-400 text-sky-600"}
+            py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>{translations[currentLanguage].yourMsg}</span>
+            <span className={`${isDarkTheme()?"text-white":"text-sky-700"} font-medium mb-4`}>{translations[currentLanguage].yourMsg}</span>
             <textarea
               rows={7}
               name='message'
               value={form.message}
               onChange={handleChange}
               placeholder={translations[currentLanguage].yourMsgPlaceholder}
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className={`${isDarkTheme()?"bg-tertiary placeholder:text-secondary text-white":
+              "bg-sky-100 placeholder:text-sky-400 text-sky-600"}
+            py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
 
           <button
             type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            className={`${isDarkTheme()?"bg-tertiary text-white shadow-primary":"bg-sky-300 text-white shadow-sky-500 hover:bg-sky-400"} py-3 px-8 rounded-xl outline-none w-fit  font-bold shadow-md`}
           >
 
              {loading ? translations[currentLanguage].sending : translations[currentLanguage].send}
