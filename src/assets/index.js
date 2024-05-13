@@ -34,13 +34,13 @@ import php_logo from "./tech/php-logo.png";
 import elo from "./company/elo.jpg";
 
 //project screenshot
-import phishproof from "./projects/phishproof.png";
-import deliverance_enterprises from "./projects/deliverance_enterprises.png";
-import deliverance_energy from "./projects/deliveranceEnergy.png";
-import deliverance_robotics from "./projects/deliveranceRobotics.png";
-import coolxue from "./projects/coolxue.png";
-import my_portfolio from "./projects/3D_portfolio.png";
-import tartifyZone from "./projects/tartifyzone.png";
+import phishproof from "./projects/phishproof.webp";
+import deliverance_enterprises from "./projects/deliverance_enterprises.webp";
+import deliverance_energy from "./projects/deliveranceEnergy.webp";
+import deliverance_robotics from "./projects/deliveranceRobotics.webp";
+import coolxue from "./projects/coolxue.webp";
+import my_portfolio from "./projects/3D_portfolio.webp";
+import tartifyZone from "./projects/tartifyzone.webp";
 
 import ekim from "./ekim.jfif";
 import mariah from "./mariah.jfif";

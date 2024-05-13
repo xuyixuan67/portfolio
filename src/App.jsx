@@ -16,7 +16,8 @@ const App = () => {
             <ThemeContext.Consumer>
               {({theme}) => (
                 <div className={`relative z-0 ${ theme === 'dark' ? 'bg-primary' : 'bg-lightPrimary'}`}>
-                  <div className={`${theme === 'dark' ? 'bg-hero-pattern' : 'bg-light-hero-pattern'} bg-cover bg-no-repeat bg-center`}>
+                  {/* <div className={`${theme === 'dark' ? 'bg-hero-pattern' : 'bg-light-hero-pattern'} bg-cover bg-no-repeat bg-center`}> */}
+                  <div className={` bg-cover bg-no-repeat bg-center`}>
                     <Navbar />
                     <Hero />
                   </div>

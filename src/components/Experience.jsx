@@ -23,7 +23,7 @@ const ExperienceCard = ({ experience, currentLanguage, isDarkTheme }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: isDarkTheme? "#1d1836" : "#8cf9e5",
+        background: isDarkTheme? "#1d1836" : "#c3f2ff",
         color: isDarkTheme? "#fff" : "#f90589",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}

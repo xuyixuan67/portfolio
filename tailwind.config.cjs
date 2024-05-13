@@ -13,7 +13,7 @@ module.exports = {
         "white-100": "#f3f3f3",
 
         //for light version
-        lightPrimary: "#F3F4F6", // light version of primary
+        lightPrimary: "#fff", // light version of primary
         "light-secondary": "#4B5563", // light version of secondary
         "light-tertiary": "#E5E7EB", // light version of tertiary
         "light-black-100": "#1F2937", // light version of black-100

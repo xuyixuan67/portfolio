@@ -81,7 +81,7 @@ const About = () => {
        animate="show"
         variants={fadeIn("left", "", 0.1, 1)}
         className={`mt-4 text-[18px] max-w-3xl leading-[30px] 
-        ${isDarkTheme()?" text-secondary":"text-sky-700"} mx-auto text-justify`}>
+        ${isDarkTheme()?" text-secondary":"text-sky-700"} mx-auto text-left`}>
           {translations[currentLanguage].about_main_text}
       </motion.p>
 
