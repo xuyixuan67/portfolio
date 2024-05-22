@@ -1,8 +1,25 @@
-# React + Vite
+# Dynamic and Interactive 3D Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This portfolio website is a dynamic and interactive 3D platform that showcases my work and skills as a full-stack developer. The initial build of this site was based on the foundational concepts from the JS Mastry tutorial. However, to further master the use of React.js and to meet my personal needs, I've made significant additions and modifications to this site.
 
-Currently, two official plugins are available:
+## Setup and Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Follow these steps to get the project up and running on your local machine:
+
+1. **Download the Project**
+    - Clone the repository to your local machine or download the project files.
+
+2. **Install Dependencies**
+    - Navigate to the project directory in your terminal.
+    - Run the following command to install the necessary dependencies:
+    ```bash
+    npm install
+    ```
+
+3. **Run the Project**
+    - Once the dependencies are installed, you can start the project by running:
+    ```bash
+    npm run dev
+    ```
+
+    This should start the project on your local machine. Happy coding! 😊
