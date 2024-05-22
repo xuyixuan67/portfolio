@@ -22,4 +22,4 @@ Follow these steps to get the project up and running on your local machine:
     npm run dev
     ```
 
-    This should start the project on your local machine. Happy coding! 😊
+
