@@ -44,5 +44,5 @@ Follow these steps to get the project up and running on your local machine:
 
 ## Credits
 
-This project was inspired by the tutorial **3D Web Developer Portfolio in React** by _**JS Mastry**_. You can find the original tutorial https://www.youtube.com/watch?v=0fYi8SGA20k&t=4767s&ab_channel=JavaScriptMastery
+This project was inspired by the tutorial **3D Web Developer Portfolio in React** by _**JS Mastry**_. You can find the original tutorial here →https://www.youtube.com/watch?v=0fYi8SGA20k&t=4767s&ab_channel=JavaScriptMastery
 
